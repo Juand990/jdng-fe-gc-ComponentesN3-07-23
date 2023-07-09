@@ -1,0 +1,38 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<h1>Administración de Articulos</h1>
+<table>
+  <tr>
+    <td>Codigo</td>
+    <td>Descripcion</td>
+    <td>Precio</td>
+    <td>Borrar</td>
+    <td>Seleccionar</td>
+  </tr>
+  <tr *ngFor="let item of arrArticulos">
+    <td>{{item.id}}</td>
+    <td>{{item.descripcion}}</td>
+    <td>{{item.precio}}</td>
+    <td><button (click)="borrar(item)" type="button">Borrar</button></td>
+    <td><button (click)="select(item)" type="button">Seleccionar</button></td>
+  </tr>
+</table>
+<app-articulos [data]="artSelecionado" (plus)="agregarArt($event)" (mod)="modificarArt($event)"></app-articulos>
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>

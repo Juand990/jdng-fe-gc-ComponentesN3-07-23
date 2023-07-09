@@ -1,0 +1,14 @@
+<div *ngIf="data[0] != undefined;else vacio">
+    <p>Codigo:<input [(ngModel)]="data[0].id" type="text" value="{{data[0].id}}"></p>
+    <p>Descripcion:<input [(ngModel)]="data[0].descripcion" type="text" value="{{data[0].descripcion}}"></p>
+    <p>Precio:<input [(ngModel)]="data[0].precio" type="text" value="{{data[0].precio}}"></p>
+    <button (click)="agregar()">Agregar</button>
+    <button (click)="modificar()">Modificar</button>
+</div>
+<ng-template #vacio>
+    <p>Codigo:<input [(ngModel)]="data.id" type="text" value=""></p>
+    <p>Descripcion:<input [(ngModel)]="data.descripcion" type="text" value=""></p>
+    <p>Precio:<input [(ngModel)]="data.precio" type="text" value=""></p>
+    <button (click)="agregar()">Agregar</button>
+    <button (click)="modificar()">Modificar</button>
+</ng-template>
